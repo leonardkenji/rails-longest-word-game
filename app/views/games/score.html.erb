@@ -1,0 +1,12 @@
+<div class="container m-5">
+  <div class="container my-3">
+    <h1>Longest Word Game</h1>
+    <%= link_to "Home", "/", class: "btn btn-primary my-4" %>
+  </div>
+  <div class="container my-3 border-start ps-3">
+    <p class="fw-bold mb-1"><%= @your_word %></p>
+    <p class="fst-italic text-muted mb-0"><%= @result[:time] %></p>
+    <p class="fst-italic text-muted mb-0"><%= @result[:score] %></p>
+    <p class="fw-bold mb-1"><%= @result[:message] %></p>
+  </div>
+</div>

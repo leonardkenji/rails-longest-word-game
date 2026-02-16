@@ -1,0 +1,27 @@
+<div class="container m-5">
+  <h1>Longest Word Game</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 gap-4 d-flex flex-wrap my-3">
+        <% @array_words.each do |letter| %>
+          <span class="btn btn-primary fw-bold px-3 py-2">
+            <%= letter %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <form action= "/score" method="POST" data-turbo="false">
+      <label class="form-label" for="word">Whats is the longest word you can see?</label>
+      <input type="text" class="form-control" id="word" name="your_word">
+      <input class="btn btn-dark m-2" type="submit" value="Score!">
+
+      <%= hidden_field_tag :grid, @array_words.join(" ") %>
+      <%= hidden_field_tag :start_time, @start_time %>
+
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    </form>
+  </div>
+</div>
